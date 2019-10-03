@@ -1,9 +1,8 @@
 
-import Car.Bmw;
 import Car.Car;
 import Car.Citroen;
 import Car.Engine;
-import Lock.Lock;
+import Lock.*;
 import Wheels.Wheel;
 
 
@@ -26,7 +25,7 @@ public class TestCar {
     citroen.setWhellWinter(firstWinter);
     citroen.setEngine(firstEngine);
 
-    Car bmw=new Bmw(5,1500);
+
     System.out.println("Создан автомобиль в нем стоит двигатель "+citroen.getEngine().getName()+
             " c объемом: "+citroen.getEngine().getCapacity());
     System.out.println("топливо: "+citroen.getEngine().getFuel());
@@ -39,6 +38,8 @@ public class TestCar {
         checkKeyLock(driverFirst.getKey(),citroen.getLock());
 
 
+
+
     System.out.println("Создан водитель "+driverFirst.getName()+" у которого есть ключ "+driverFirst.getKey().getName()+
             ", а так же права категории B: "+driverFirst.isCategoryB()+ " категории С: "+driverFirst.isCategoryC());
         driverFirst.open();
@@ -48,6 +49,7 @@ public class TestCar {
         driverFirst.addFuel();
 
     }
+
     public static void checkDriversOnCar(Car car,Driver driver){
         System.out.println("Проверяем может ли водитель сесть за руль автомобиля");
         if((car.getCategoryCar().equals(driver.isCategoryB()))|| (car.getCategoryCar().equals(driver.isCategoryC()))) {
@@ -58,12 +60,18 @@ public class TestCar {
         }
     }
 
-    public static void checkKeyLock(Key key,Lock lock){
+    public static void  checkKeyLock(Key key, Lock lock){
         System.out.println("Проверяем подходит ли ключ к авто...");
         if (((key.getPassword().equals(lock.getPassword()))) && (key.getName().equals(lock.getName()))) {
             System.out.println("Ключ подошел");
+
         }
-        else System.out.println("Нет доступа!");
+        else {
+            System.out.println("Нет доступа!");
+
+        }
+
+
     }
 
 

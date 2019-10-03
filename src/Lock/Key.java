@@ -1,3 +1,5 @@
+package Lock;
+
 public class Key {
    final String name;
    final String password;
