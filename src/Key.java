@@ -7,7 +7,7 @@ public class Key {
         this.password = password;
     }
 
-    public String getType() {
+    public String getName() {
         return name;
     }
 

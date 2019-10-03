@@ -18,7 +18,7 @@ public class TestCar {
     firstEngine.setName("EW7J4");
     Lock lockCitroen=new Lock("Citroen","1383");
 
-    Citroen citroen=new Citroen(5,1850);
+    Citroen citroen=new Citroen(5,5000);
     citroen.setName("C5");
     citroen.setLock(lockCitroen);
     citroen.setWhellWinter(firstWinter);
@@ -32,9 +32,10 @@ public class TestCar {
         System.out.println("Имеет посадочных мест: "+citroen.getNumberOfSeats());
         System.out.println("Установлен замок зажигания типа: "+citroen.getLock().getName());
         checkDriversOnCar(citroen,driverFirst);
+        checkKeyLock(driverFirst.getKey(),citroen.getLock());
 
 
-    System.out.println("Создан водитель "+driverFirst.getName()+" у которого есть ключ "+driverFirst.getKey().getType()+
+    System.out.println("Создан водитель "+driverFirst.getName()+" у которого есть ключ "+driverFirst.getKey().getName()+
             ", а так же права категории B: "+driverFirst.isCategoryB()+ " категории С: "+driverFirst.isCategoryC());
         driverFirst.open();
         driverFirst.start();
@@ -44,13 +45,21 @@ public class TestCar {
 
     }
     public static void checkDriversOnCar(Citroen citroen,Driver driver){
-        System.out.println("Проверяем может ли водитель сесть на руль автомобиля");
-        if(citroen.getCategoryCar().equals(driver.isCategoryB())){
+        System.out.println("Проверяем может ли водитель сесть за руль автомобиля");
+        if((citroen.getCategoryCar().equals(driver.isCategoryB()))|| (citroen.getCategoryCar().equals(driver.isCategoryC()))) {
             System.out.println("Ответ: может");
         }
         else {
             System.out.println("Ответ:Не может");
         }
+    }
+
+    public static void checkKeyLock(Key key,Lock lock){
+        System.out.println("Проверяем подходит ли ключ к авто...");
+        if (((key.getPassword().equals(lock.getPassword()))) && (key.getName().equals(lock.getName()))) {
+            System.out.println("Ключ подошел");
+        }
+        else System.out.println("Нет доступа!");
     }
 
 

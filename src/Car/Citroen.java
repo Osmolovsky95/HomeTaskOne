@@ -14,8 +14,8 @@ public class Citroen extends Car {
     final int weightKg;
 
     public Citroen(int numberOfSeats, int weightKg) {
-        this.numberOfSeats = numberOfSeats;
-        this.weightKg = weightKg;
+               this.numberOfSeats = numberOfSeats;
+       this.weightKg = weightKg;
         if(weightKg<3500) {
             this.categoryCar = "B";
         }
