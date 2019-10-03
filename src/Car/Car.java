@@ -5,14 +5,27 @@ import Lock.Lock;
 import Wheels.Wheel;
 
 
-abstract class Car {
+public abstract class Car {
     String name;
     Engine engine;
-    int numberOfSeats;
+   int numberOfSeats;
     String categoryCar;
     Lock lock;
     Wheel whell;
     int weightKg;
+
+
+    public Car(int numberOfSeats, int weightKg) {
+        this.numberOfSeats = numberOfSeats;
+        this.weightKg = weightKg;
+        if(weightKg<3500) {
+            this.categoryCar = "B";
+        }
+        else {
+            this.categoryCar="C";
+        }
+    }
+
 
 
 

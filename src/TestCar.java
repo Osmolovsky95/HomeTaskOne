@@ -1,4 +1,6 @@
 
+import Car.Bmw;
+import Car.Car;
 import Car.Citroen;
 import Car.Engine;
 import Lock.Lock;
@@ -18,11 +20,13 @@ public class TestCar {
     firstEngine.setName("EW7J4");
     Lock lockCitroen=new Lock("Citroen","1383");
 
-    Citroen citroen=new Citroen(5,5000);
+    Car citroen=new Citroen(5,5000);
     citroen.setName("C5");
     citroen.setLock(lockCitroen);
     citroen.setWhellWinter(firstWinter);
     citroen.setEngine(firstEngine);
+
+    Car bmw=new Bmw(5,1500);
     System.out.println("Создан автомобиль в нем стоит двигатель "+citroen.getEngine().getName()+
             " c объемом: "+citroen.getEngine().getCapacity());
     System.out.println("топливо: "+citroen.getEngine().getFuel());
@@ -44,9 +48,9 @@ public class TestCar {
         driverFirst.addFuel();
 
     }
-    public static void checkDriversOnCar(Citroen citroen,Driver driver){
+    public static void checkDriversOnCar(Car car,Driver driver){
         System.out.println("Проверяем может ли водитель сесть за руль автомобиля");
-        if((citroen.getCategoryCar().equals(driver.isCategoryB()))|| (citroen.getCategoryCar().equals(driver.isCategoryC()))) {
+        if((car.getCategoryCar().equals(driver.isCategoryB()))|| (car.getCategoryCar().equals(driver.isCategoryC()))) {
             System.out.println("Ответ: может");
         }
         else {

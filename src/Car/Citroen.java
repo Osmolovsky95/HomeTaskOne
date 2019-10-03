@@ -14,6 +14,7 @@ public class Citroen extends Car {
     final int weightKg;
 
     public Citroen(int numberOfSeats, int weightKg) {
+        super(numberOfSeats,weightKg);
                this.numberOfSeats = numberOfSeats;
        this.weightKg = weightKg;
         if(weightKg<3500) {
@@ -23,47 +24,5 @@ public class Citroen extends Car {
                 this.categoryCar="C";
             }
         }
-
-
-
-    public Wheel getWhell() {
-        return whell;
     }
-
-    public int getNumberOfSeats() {
-        return numberOfSeats;
-    }
-
-    public String getCategoryCar() {
-        return categoryCar;
-    }
-
-    public void setWhellWinter(Wheel whell) {
-        this.whell = whell;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public void setEngine(Engine engine) {
-        this.engine = engine;
-    }
-
-    public Lock getLock() {
-        return lock;
-    }
-
-    public void setLock(Lock lock) {
-        this.lock = lock;
-    }
-}
 

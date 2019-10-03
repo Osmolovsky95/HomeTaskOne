@@ -9,33 +9,20 @@ public class Bmw extends Car {
     final String categoryCar;
     private Lock lock;
 
-    public Bmw(int numberOfSeats, String categoryCar) {
+    public Bmw(int numberOfSeats, int weightKg) {
+        super(numberOfSeats,weightKg);
         this.numberOfSeats = numberOfSeats;
-        this.categoryCar = categoryCar;
+        this.weightKg = weightKg;
+        if (weightKg < 3500) {
+            this.categoryCar = "B";
+        } else {
+            this.categoryCar = "C";
+        }
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public void setEngine(Engine engine) {
-        this.engine = engine;
-    }
-
-    public Lock getLock() {
-        return lock;
-    }
-
-    public void setLock(Lock lock) {
-        this.lock = lock;
-    }
 }
+
+
+
 
